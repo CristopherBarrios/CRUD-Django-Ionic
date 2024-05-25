@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+</head>
+<body>
+    <h1>Lista de Personas</h1>
+    <a href="{% url 'persona_create' %}">Añadir Persona</a>
+    <ul>
+        {% for persona in personas %}
+            <li>
+                <a href="{% url 'persona_detail' persona.id %}">{{ persona.nombre }} {{ persona.apellido }}</a>
+                <a href="{% url 'persona_update' persona.id %}">Editar</a>
+                <a href="{% url 'persona_delete' persona.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

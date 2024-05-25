@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de Persona</title>
+</head>
+<body>
+    <h1>{{ persona.nombre }} {{ persona.apellido }}</h1>
+    <a href="{% url 'persona_update' persona.id %}">Editar</a>
+    <a href="{% url 'persona_list' %}">Volver a la Lista</a>
+</body>
+</html>
