@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Personas
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="createPerson()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let person of persons">
+      <ion-label>
+        <h2>{{person.nombre}} {{person.apellido}}</h2>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="updatePerson(person)">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-button>
+        <ion-button (click)="deletePerson(person.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

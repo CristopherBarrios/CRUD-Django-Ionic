@@ -1,0 +1,7 @@
+{
+  "name": "movilfrontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
