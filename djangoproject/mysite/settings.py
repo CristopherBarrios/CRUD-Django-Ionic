@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +29,9 @@ SECRET_KEY = 'django-insecure-=241dup7&$@&2y%t%8@7p#9k#fdijia+mjl%n-!6ti+t@wnbn)
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.1.7'
+    '192.168.1.7',
+    '127.0.0.1',
+    '.onrender.com'
 ]
 
 
@@ -91,14 +96,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+load_dotenv()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'persona',
-        'USER': 'root',
-        'PASSWORD': '1234567',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
