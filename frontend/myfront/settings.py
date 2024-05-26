@@ -66,7 +66,7 @@ DATABASES = {
     }
 }
 
-BACKEND_API_URL = 'http://192.168.1.7:8000'
+BACKEND_API_URL = 'https://crud-django-ionic.onrender.com'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
