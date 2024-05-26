@@ -8,7 +8,7 @@ import { Person } from './person.model';
 })
 export class HomeService {
 
-  private apiUrl = 'http://192.168.1.7:8000/api/personas';
+  private apiUrl = 'https://crud-django-ionic.onrender.com/api/personas';
 
   constructor(private http: HttpClient) { }
 
